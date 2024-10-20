@@ -12,10 +12,7 @@ class FolderController extends Controller
     // Mendapatkan semua folder
     public function index()
     {
-        // $folders = Folder::all();
-        // $folders = Folder::whereNull('parent_id')->get(); // Hanya folder yang tidak memiliki parent (root folders)
         $folders = Folder::with('subfolders')->whereNull('parent_id')->get();
-        // $folders = Folder::whereNull('parent_id')->with('subfolders')->get();
         return response()->json($folders);
     }
 
