@@ -32,8 +32,8 @@ Route::post('/folders', [FolderController::class, 'store']);
 Route::delete('/folders/{id}', [FolderController::class, 'destroy']);
 
 
-Route::get('folders/{folderId}/files', [FolderController::class, 'getFilesInFolder']);
-Route::post('folders/{folderId}/files', [FolderController::class, 'addFile']);
+Route::get('folders/{folderId}/files', [FileController::class, 'index']);
+Route::post('folders/{folderId}/files', [FileController::class, 'store']);
 
 // Route::get('/folders/{folder_id}/files', [FileController::class, 'index']);
 // Route::post('/files', [FileController::class, 'store']);
